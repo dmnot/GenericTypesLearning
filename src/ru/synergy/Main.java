@@ -1,5 +1,6 @@
 package ru.synergy;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -28,7 +29,18 @@ public class Main {
                 System.out.println(s);
             }
         }
-
-
+        //--------------------------------------------------------------------------------------------------------------
+        //Создание ArrayList
+        ArrayList numbers = new ArrayList(); //  По умолчанию  принимает Object
+        for(int i =0;i<10;i++){ // Добавление элементов в список
+            numbers.add(i*10);
+           // numbers.add(10.4f); // Ошибка  о том что суммировать этот элемет нельзя так как сумма чисел доступна для тех чисел у которых тип Int
+            //И невозможно Float преобразовать в Int
+        }
+        int sum = 0;
+        for (Object o: numbers){ // Взятие элеметов массива для сложения их друг с другом
+            sum = sum + (Integer) o;
+        }
+        System.out.println(sum);
     }
 }

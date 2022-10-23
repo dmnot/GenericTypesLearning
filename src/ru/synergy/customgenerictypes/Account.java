@@ -1,20 +1,21 @@
 package ru.synergy.customgenerictypes;
 
-public class Account<T> { // Объявление класса с типом переменной который принимает класс
+public class Account implements Accountable<String> { // Объявление класса с типом переменной который принимает класс
     //Объявление переменной
-    private T id; // Принимает тот тип переменной который указан в главном файле при объявлении объекта класса
+    private String id; // Принимает тот тип переменной который указан в главном файле при объявлении объекта класса
     private int sum;
 
-    public Account(T id, int sum) {
+    public Account(String id, int sum) {
         this.id = id;
         this.sum = sum;
     }
 
-    public T getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(T id) {
+
+    public void setId(String id) {
         this.id = id;
     }
 

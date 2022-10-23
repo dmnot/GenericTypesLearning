@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Object o = new Scanner(System.in); // Object Это класс всех классов который может преобразовываться в любой класс
+      /*  Object o = new Scanner(System.in); // Object Это класс всех классов который может преобразовываться в любой класс
         //((Scanner) o).nextInt();//Преобразование объекта класса Object в класс Integer
         Scanner scanner = null; // Инициализация сканера
         System.out.println(o instanceof Scanner); // Проверка является ли Object сканером
@@ -18,6 +18,17 @@ public class Main {
 
         //((String) o).length(); Выдает ошибку то что Object  является сканером и не может являтся строкой
         Object o1 = new String();
-        Object o2 = new Integer(1);
+        Object o2 = new Integer(1);*/
+
+
+        Object[] objects = {10,"Hello",3.14}; //Массив с автоупаковкой
+        for (Object o : objects){ // Взятие элементов массива
+            if (o instanceof  String){ // Проверка является ли элемента массива типом String
+                String s = (String) o; // Преобразование Object в строку
+                System.out.println(s);
+            }
+        }
+
+
     }
 }

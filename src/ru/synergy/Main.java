@@ -1,6 +1,7 @@
 package ru.synergy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -47,5 +48,32 @@ public class Main {
 
        //  Объявление GenericType
         // Основной тип<Тип параметр>
+        HashMap<Integer,String> map = new HashMap<>(); // Создание словаря принимающее
+        // первым число вторым строку
+        map.put(7,"Hi");
+        map.put(15,"Hello");
+        //---------------------------------------------
+        ArrayList<String> ListHi = new ArrayList<>(); // Список приветствий
+        ListHi.add("Hi");
+        ListHi.add("Привет");
+        //---------------------------------------------
+        ArrayList<String> ListBye = new ArrayList<>(); // Список прощаний
+        ListBye.add("Bye");
+        ListBye.add("Пока");
+        ArrayList<ArrayList<String>> list = new ArrayList<>(); // Создание списка содержащего списки
+        list.add(ListHi);
+        list.add(ListBye);
+        for (ArrayList<String> spisok : list ){ // Взятие списков внутри списка
+            for (String s  : spisok){ // Взятие всех приветсвий и прощаний из двух списков
+                System.out.println(s);
+            }
+        }
     }
 }
+/*
+   То что делаем мы в коде                            ||    То во что преобразует компилятор
+* ArrayList<Integer> list = new ArrayList<Integer>();   ArrayList list = new ArrayList
+  list.add(1);                                        || list.add((Integer) 1);
+  int x = list.get(0);                                || int x = (Integer) list.get(0);
+  list.set(0,10);                                      || list.set(0,(Integer)10);
+* */
